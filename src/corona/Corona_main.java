@@ -16,6 +16,12 @@ public class Corona_main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        mainJFrame mainWindow = new mainJFrame();
+        mainWindow.setTitle("Application");
+        mainWindow.setVisible(true);
+        mainWindow.setLocationRelativeTo(null);
+        mainWindow.setResizable(false);
+                
     }
     
 }
