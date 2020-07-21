@@ -30,6 +30,14 @@ public class DeathsJFrame2 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        labelSindh = new javax.swing.JLabel();
+        labelBalochistan = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelKpk = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        labelPunjab = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +52,7 @@ public class DeathsJFrame2 extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField1.setText("                  DEATHS");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -69,17 +78,82 @@ public class DeathsJFrame2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel3.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel3.setText("Sindh:");
+
+        jLabel4.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel4.setText("Balochistan: ");
+
+        labelSindh.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelSindh.setForeground(new java.awt.Color(139, 0, 0));
+        labelSindh.setText("count");
+        labelSindh.setToolTipText("");
+
+        labelBalochistan.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelBalochistan.setForeground(new java.awt.Color(139, 0, 0));
+        labelBalochistan.setText("count");
+        labelBalochistan.setToolTipText("");
+
+        jLabel2.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel2.setText("KPK:");
+
+        labelKpk.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelKpk.setForeground(new java.awt.Color(139, 0, 0));
+        labelKpk.setText("count");
+        labelKpk.setToolTipText("");
+
+        jLabel1.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel1.setText("Punjab:");
+
+        labelPunjab.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelPunjab.setForeground(new java.awt.Color(139, 0, 0));
+        labelPunjab.setText("count");
+        labelPunjab.setToolTipText("");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPunjab)
+                    .addComponent(labelKpk)
+                    .addComponent(labelSindh)
+                    .addComponent(labelBalochistan))
+                .addGap(51, 51, 51))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(labelPunjab))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelKpk)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(labelSindh))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(labelBalochistan))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,8 +214,16 @@ public class DeathsJFrame2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JLabel labelBalochistan;
+    public javax.swing.JLabel labelKpk;
+    public javax.swing.JLabel labelPunjab;
+    public javax.swing.JLabel labelSindh;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,6 +29,14 @@ public class criticalJFrame2 extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
+        labelPunjab = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelKpk = new javax.swing.JLabel();
+        labelSindh = new javax.swing.JLabel();
+        labelBalochistan = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,17 +76,82 @@ public class criticalJFrame2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        labelPunjab.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelPunjab.setForeground(new java.awt.Color(255, 165, 0));
+        labelPunjab.setText("count");
+        labelPunjab.setToolTipText("");
+
+        jLabel1.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel1.setText("Punjab:");
+
+        jLabel2.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel2.setText("KPK:");
+
+        labelKpk.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelKpk.setForeground(new java.awt.Color(255, 165, 0));
+        labelKpk.setText("count");
+        labelKpk.setToolTipText("");
+
+        labelSindh.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelSindh.setForeground(new java.awt.Color(255, 165, 0));
+        labelSindh.setText("count");
+        labelSindh.setToolTipText("");
+
+        labelBalochistan.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelBalochistan.setForeground(new java.awt.Color(255, 165, 0));
+        labelBalochistan.setText("count");
+        labelBalochistan.setToolTipText("");
+
+        jLabel4.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel4.setText("Balochistan: ");
+
+        jLabel3.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel3.setText("Sindh:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPunjab)
+                    .addComponent(labelKpk)
+                    .addComponent(labelSindh)
+                    .addComponent(labelBalochistan))
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(labelPunjab))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelKpk)
+                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(labelSindh))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(labelBalochistan))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,7 +201,15 @@ public class criticalJFrame2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JLabel labelBalochistan;
+    public javax.swing.JLabel labelKpk;
+    public javax.swing.JLabel labelPunjab;
+    public javax.swing.JLabel labelSindh;
     // End of variables declaration//GEN-END:variables
 }

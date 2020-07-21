@@ -5,6 +5,9 @@
  */
 package corona;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bilal
@@ -14,7 +17,7 @@ public class mainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public mainJFrame() {
         initComponents();
     }
 
@@ -37,18 +40,18 @@ public class mainJFrame extends javax.swing.JFrame {
         deaths = new javax.swing.JButton();
         recovered = new javax.swing.JButton();
         critical_cases = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        symptoms = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbProvince = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfName = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        tfCnic = new javax.swing.JTextField();
+        report = new javax.swing.JButton();
+        cbCaseType = new javax.swing.JComboBox<>();
 
         jPanel3.setBackground(new java.awt.Color(255, 0, 0));
         jPanel3.setForeground(new java.awt.Color(255, 0, 0));
@@ -89,6 +92,7 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField1.setText("CORONA TRACKING SYSTEM");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -159,11 +163,11 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton10.setText("Corona Symptoms");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        symptoms.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        symptoms.setText("Corona Symptoms");
+        symptoms.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                symptomsActionPerformed(evt);
             }
         });
 
@@ -178,7 +182,7 @@ public class mainJFrame extends javax.swing.JFrame {
                     .addComponent(deaths, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(recovered, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(critical_cases, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(symptoms, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -193,7 +197,7 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(critical_cases)
                 .addGap(18, 18, 18)
-                .addComponent(jButton10)
+                .addComponent(symptoms)
                 .addContainerGap())
         );
 
@@ -204,8 +208,8 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Report a Corona Case");
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Punjab", "Sindh", "KPK", "Balochistan" }));
+        cbProvince.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cbProvince.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Punjab", "Sindh", "KPK", "Balochistan" }));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -223,11 +227,16 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("CNIC");
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setText("Report");
+        report.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        report.setText("Report");
+        report.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reportMouseClicked(evt);
+            }
+        });
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Critical", "Recovered", "Death", " " }));
+        cbCaseType.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cbCaseType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Critical", "Recovered", "Death" }));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -242,7 +251,7 @@ public class mainJFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
@@ -250,11 +259,11 @@ public class mainJFrame extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField3))
+                                .addComponent(tfName))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField4))
+                                .addComponent(tfCnic))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -264,8 +273,8 @@ public class mainJFrame extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(5, 5, 5)))
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox1, 0, 118, Short.MAX_VALUE)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(cbProvince, 0, 118, Short.MAX_VALUE)
+                                    .addComponent(cbCaseType, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -275,7 +284,7 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(cbProvince, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -283,17 +292,17 @@ public class mainJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)))
+                        .addComponent(cbCaseType, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfCnic, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(report)
                 .addGap(5, 5, 5))
         );
 
@@ -330,36 +339,84 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel1AncestorAdded
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void symptomsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_symptomsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+        symptomsJFrame2 symptomsFrame = new symptomsJFrame2();
+        symptomsFrame.setResizable(false);
+        symptomsFrame.setVisible(rootPaneCheckingEnabled);
+        symptomsFrame.setLocationRelativeTo(null);
+        symptomsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_symptomsActionPerformed
 
     private void critical_casesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_critical_casesActionPerformed
-        // TODO add your handling code here:
+        criticalJFrame2 criticalFrame = new criticalJFrame2();
+        criticalFrame.setVisible(true);
+        criticalFrame.setResizable(false);
+        criticalFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        criticalFrame.labelPunjab.setText(Integer.toString(Database.punjab_c));
+        criticalFrame.labelKpk.setText(Integer.toString(Database.kpk_c));
+        criticalFrame.labelSindh.setText(Integer.toString(Database.sindh_c));
+        criticalFrame.labelBalochistan.setText(Integer.toString(Database.balochistan_c));
+        criticalFrame.setVisible(true);
     }//GEN-LAST:event_critical_casesActionPerformed
 
     private void recoveredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recoveredActionPerformed
-        // TODO add your handling code here:
+        RecoveredJFrame2 recoveredFrame = new RecoveredJFrame2();
+        recoveredFrame.setVisible(true);
+        recoveredFrame.setResizable(false);
+        recoveredFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        //set values
+        recoveredFrame.labelPunjab.setText(Integer.toString(Database.punjab_r));
+        recoveredFrame.labelKpk.setText(Integer.toString(Database.kpk_r));
+        recoveredFrame.labelSindh.setText(Integer.toString(Database.sindh_r));
+        recoveredFrame.labelBalochistan.setText(Integer.toString(Database.balochistan_r));
+        recoveredFrame.setVisible(true);
+        
     }//GEN-LAST:event_recoveredActionPerformed
 
     private void deathsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deathsActionPerformed
-    
-        new NewJFrame1().setVisible(true);
-        this.setVisible(false);
+        DeathsJFrame2 deathsFrame = new DeathsJFrame2();
+        deathsFrame.setVisible(true);
+        deathsFrame.setResizable(false);
+        deathsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
-        
-        
+        //set values
+        deathsFrame.labelPunjab.setText(Integer.toString(Database.punjab_d));
+        deathsFrame.labelKpk.setText(Integer.toString(Database.kpk_d));
+        deathsFrame.labelSindh.setText(Integer.toString(Database.sindh_d));
+        deathsFrame.labelBalochistan.setText(Integer.toString(Database.balochistan_d));
+        deathsFrame.setVisible(true);
     }//GEN-LAST:event_deathsActionPerformed
 
     private void corona_casesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_corona_casesActionPerformed
-
+        casesJFrame casesFrame = new casesJFrame();
+        casesFrame.setResizable(false);
+        casesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
-        
+        // Set values on lables
+        casesFrame.labelPunjab.setText(Integer.toString(Database.punjab));
+        casesFrame.labelKpk.setText(Integer.toString(Database.kpk));
+        casesFrame.labelSindh.setText(Integer.toString(Database.sindh));
+        casesFrame.labelBalochistan.setText(Integer.toString(Database.balochistan));
+        casesFrame.setVisible(true);
     }//GEN-LAST:event_corona_casesActionPerformed
 
     private void corona_casesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_corona_casesAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_corona_casesAncestorAdded
+
+    private void reportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseClicked
+        // TODO add your handling code here:
+        String province = this.cbProvince.getSelectedItem().toString();
+        String caseType = this.cbCaseType.getSelectedItem().toString();
+        String name = this.tfName.getText();
+        String cnic = this.tfCnic.getText();
+        
+        Database.changeValue(province, caseType , 1 ,  name , cnic);
+        JOptionPane.showMessageDialog(this, "Data for "+cnic+" "+name+" successfully added", "Add Case", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_reportMouseClicked
 
     /**
      * @param args the command line arguments
@@ -378,34 +435,33 @@ public class mainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new NewJFrame().setVisible(true);
+                new mainJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbCaseType;
+    private javax.swing.JComboBox<String> cbProvince;
     private javax.swing.JButton corona_cases;
     private javax.swing.JButton critical_cases;
     private javax.swing.JButton deaths;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -417,8 +473,10 @@ public class mainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton recovered;
+    private javax.swing.JButton report;
+    private javax.swing.JButton symptoms;
+    private javax.swing.JTextField tfCnic;
+    private javax.swing.JTextField tfName;
     // End of variables declaration//GEN-END:variables
 }

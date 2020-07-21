@@ -9,12 +9,12 @@ package corona;
  *
  * @author Bilal
  */
-public class casesJFrame1 extends javax.swing.JFrame {
+public class casesJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame1
      */
-    public NewJFrame1() {
+    public casesJFrame() {
         initComponents();
     }
 
@@ -29,6 +29,14 @@ public class casesJFrame1 extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        labelPunjab = new javax.swing.JLabel();
+        labelKpk = new javax.swing.JLabel();
+        labelSindh = new javax.swing.JLabel();
+        labelBalochistan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +51,7 @@ public class casesJFrame1 extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTextField1.setText("          CORONA CASES");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,17 +77,78 @@ public class casesJFrame1 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel1.setText("Punjab:");
+
+        jLabel2.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel2.setText("KPK:");
+
+        jLabel3.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel3.setText("Sindh:");
+
+        jLabel4.setFont(new java.awt.Font("Candara", 0, 20)); // NOI18N
+        jLabel4.setText("Balochistan: ");
+
+        labelPunjab.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelPunjab.setForeground(new java.awt.Color(238, 130, 238));
+        labelPunjab.setText("count");
+
+        labelKpk.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelKpk.setForeground(new java.awt.Color(238, 130, 238));
+        labelKpk.setText("count");
+
+        labelSindh.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelSindh.setForeground(new java.awt.Color(238, 130, 238));
+        labelSindh.setText("count");
+
+        labelBalochistan.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        labelBalochistan.setForeground(new java.awt.Color(238, 130, 238));
+        labelBalochistan.setText("count");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPunjab)
+                    .addComponent(labelKpk)
+                    .addComponent(labelSindh)
+                    .addComponent(labelBalochistan))
+                .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(labelPunjab))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelKpk)
+                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(labelSindh))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(labelBalochistan))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,27 +178,31 @@ public class casesJFrame1 extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(casesJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        //</editor-fold>
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame1().setVisible(true);
+                new casesJFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JLabel labelBalochistan;
+    public javax.swing.JLabel labelKpk;
+    public javax.swing.JLabel labelPunjab;
+    public javax.swing.JLabel labelSindh;
     // End of variables declaration//GEN-END:variables
 }
